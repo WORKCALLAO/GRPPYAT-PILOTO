@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Satisfacción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuestionario de Satisfacción</h1>
+    <form id="cuestionario">
+
+<!-- Campo DNI -->
+<label for="dni">Ingrese su DNI (8 dígitos):</label>
+<input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" required>
+<small>Debe ingresar exactamente 8 números.</small>
+
+
+
+
+        <!-- Pregunta 1 -->
+        <label for="satisfaccion1">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
+        <select id="satisfaccion1" name="satisfaccion1">
+            <option value="">Seleccionar</option>
+            <option value="1">1 - Muy Insatisfecho</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 - Muy Satisfecho</option>
+        </select>
+
+        <!-- Pregunta 2 -->
+        <label for="claridad">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
+        <select id="claridad" name="claridad">
+            <option value="">Seleccionar</option>
+            <option value="1">1 - Deficiente</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 - Excelente</option>
+        </select>
+
+        <!-- Pregunta 3 -->
+        <label for="tiempo">3. ¿Consideras que el tiempo de espera fue adecuado?</label>
+        <select id="tiempo" name="tiempo">
+            <option value="">Seleccionar</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+
+        <!-- Pregunta adicional para "tiempo no adecuado" -->
+        <div id="pregunta3a" class="hidden">
+            <label for="procesoDemora">¿En qué proceso tuvo el inconveniente por demora?</label>
+            <select id="procesoDemora" name="procesoDemora">
+                <option value="">Seleccionar</option>
+                <option value="normas">Durante el Examen de Normas</option>
+                <option value="manejo">Durante el Examen de Manejo</option>
+                <option value="emision">Durante la Emisión</option>
+            </select>
+        </div>
+
+        <!-- Pregunta adicional para "emisión" -->
+        <div id="pregunta3b" class="hidden">
+            <label for="sedeDemora">¿En qué sede tuvo el inconveniente?</label>
+            <select id="sedeDemora" name="sedeDemora">
+                <option value="">Seleccionar</option>
+                <option value="juanPablo">Sede Juan Pablo II</option>
+                <option value="macBellavista">Sede MAC de Bellavista</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <label for="amabilidad">4. ¿El personal encargado fue amable y eficiente?</label>
+        <select id="amabilidad" name="amabilidad">
+            <option value="">Seleccionar</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+
+        <!-- Pregunta adicional para "personal no amable" -->
+        <div id="pregunta4a" class="hidden">
+            <label for="procesoAtencion">¿En qué proceso tuvo el inconveniente de atención?</label>
+            <select id="procesoAtencion" name="procesoAtencion">
+                <option value="">Seleccionar</option>
+                <option value="normas">Durante el Examen de Normas</option>
+                <option value="manejo">Durante el Examen de Manejo</option>
+                <option value="emision">Durante la Emisión</option>
+            </select>
+        </div>
+
+        <!-- Pregunta adicional para "emisión" en la pregunta de amabilidad -->
+        <div id="pregunta4b" class="hidden">
+            <label for="sedeAtencion">¿En qué sede tuvo el inconveniente?</label>
+            <select id="sedeAtencion" name="sedeAtencion">
+                <option value="">Seleccionar</option>
+                <option value="juanPablo">Sede Juan Pablo II</option>
+                <option value="macBellavista">Sede MAC de Bellavista</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 5: Mejora continua -->
+        <label for="mejora">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio?</label>
+        <textarea id="mejora" name="mejora" rows="4" cols="50"></textarea>
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const tiempo = document.getElementById('tiempo');
+        const procesoDemora = document.getElementById('procesoDemora');
+        const pregunta3a = document.getElementById('pregunta3a');
+        const pregunta3b = document.getElementById('pregunta3b');
+        const amabilidad = document.getElementById('amabilidad');
+        const procesoAtencion = document.getElementById('procesoAtencion');
+        const pregunta4a = document.getElementById('pregunta4a');
+        const pregunta4b = document.getElementById('pregunta4b');
+
+
+const dniInput = document.getElementById('dni');
+    
+    dniInput.addEventListener('input', function() {
+        if (!/^\d{0,8}$/.test(dniInput.value)) {
+            dniInput.setCustomValidity("Debe ingresar solo números y hasta 8 dígitos.");
+        } else {
+            dniInput.setCustomValidity(""); // Validación OK
+        }
+    });
+
+        // Mostrar preguntas adicionales basadas en el tiempo de espera
+        tiempo.addEventListener('change', function() {
+            if (tiempo.value === 'no') {
+                pregunta3a.classList.remove('hidden');
+            } else {
+                pregunta3a.classList.add('hidden');
+                pregunta3b.classList.add('hidden');
+            }
+        });
+
+        // Mostrar pregunta de sede si el problema fue durante la emisión
+        procesoDemora.addEventListener('change', function() {
+            if (procesoDemora.value === 'emision') {
+                pregunta3b.classList.remove('hidden');
+            } else {
+                pregunta3b.classList.add('hidden');
+            }
+        });
+
+        // Mostrar preguntas adicionales basadas en la amabilidad del personal
+        amabilidad.addEventListener('change', function() {
+            if (amabilidad.value === 'no') {
+                pregunta4a.classList.remove('hidden');
+            } else {
+                pregunta4a.classList.add('hidden');
+                pregunta4b.classList.add('hidden');
+            }
+        });
+
+        // Mostrar pregunta de sede si el problema fue durante la emisión (amabilidad)
+        procesoAtencion.addEventListener('change', function() {
+            if (procesoAtencion.value === 'emision') {
+                pregunta4b.classList.remove('hidden');
+            } else {
+                pregunta4b.classList.add('hidden');
+            }
+        });
+
+        // Manejar el envío del formulario
+        document.getElementById('cuestionario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Gracias por completar el cuestionario');
+        });
+    </script>
+</body>
+</html>
