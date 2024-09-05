@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+
     <title>Cuestionario de Satisfacción</title>
     <style>
         body {
@@ -18,32 +20,39 @@
         }
     </style>
 </head>
-<body>
-    <h1>Cuestionario de Satisfacción</h1>
-    <form id="cuestionario" action="..." method="POST">
+<body class="bg-gray-100 p-4">
+   <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Cuestionario de Satisfacción</h1>
+        <form id="cuestionario" action="..." method="POST" class="space-y-4">
 
 <!-- Campo DNI -->
-<label for="dni">Ingrese su DNI (8 dígitos):</label>
-<input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" required>
-<small>Ingrese un DNI valido.</small>
+ <div>
+                <label for="dni" class="block text-sm font-medium">Ingrese su DNI (8 dígitos):</label>
+                <input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" required 
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <small class="text-red-500">Ingrese un DNI válido.</small>
+            </div>
 
 
 
 
-        <!-- Pregunta 1 -->
-        <label for="satisfaccion1">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
-        <select id="satisfaccion1" name="satisfaccion1">
-            <option value="">Seleccionar</option>
-            <option value="1">1 - Muy Insatisfecho</option>
-            <option value="2">2 - Insatisfecho</option>
-            <option value="3">3 - Neutro</option>
-            <option value="4">4 - Satisfecho</option>
-            <option value="5">5 - Muy Satisfecho</option>
-        </select>
+         <!-- Pregunta 1 -->
+            <div>
+                <label for="satisfaccion1" class="block text-sm font-medium">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
+                <select id="satisfaccion1" name="satisfaccion1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="">Seleccionar</option>
+                    <option value="1">1 - Muy Insatisfecho</option>
+                    <option value="2">2 - Insatisfecho</option>
+                    <option value="3">3 - Neutro</option>
+                    <option value="4">4 - Satisfecho</option>
+                    <option value="5">5 - Muy Satisfecho</option>
+                </select>
+            </div>
 
         <!-- Pregunta 2 -->
-        <label for="claridad">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
-        <select id="claridad" name="claridad">
+ 	 <div>
+        <label for="claridad" class="block text-sm font-medium">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
+        <select id="claridad" name="claridad" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Seleccionar</option>
             <option value="1">1 - Deficiente</option>
             <option value="2">2 - Malo</option>
@@ -51,19 +60,22 @@
             <option value="4">4 - Bueno</option>
             <option value="5">5 - Excelente</option>
         </select>
+	 </div>
 
         <!-- Pregunta 3 -->
-        <label for="tiempo">3. ¿Consideras que el tiempo de espera fue adecuado?</label>
-        <select id="tiempo" name="tiempo">
+	<div>
+        <label for="tiempo" class="block text-sm font-medium">3. ¿Consideras que el tiempo de espera fue adecuado?</label>
+        <select id="tiempo" name="tiempo" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Seleccionar</option>
             <option value="si">Sí</option>
             <option value="no">No</option>
         </select>
+	 </div>
 
         <!-- Pregunta adicional para "tiempo no adecuado" -->
         <div id="pregunta3a" class="hidden">
-            <label for="procesoDemora">¿En qué proceso tuvo el inconveniente por demora?</label>
-            <select id="procesoDemora" name="procesoDemora">
+            <label for="procesoDemora" class="block text-sm font-medium">¿En qué proceso tuvo el inconveniente por demora?</label>
+            <select id="procesoDemora" name="procesoDemora" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option value="">Seleccionar</option>
                 <option value="normas">Durante el Examen de Normas</option>
                 <option value="manejo">Durante el Examen de Manejo</option>
@@ -73,8 +85,8 @@
 
         <!-- Pregunta adicional para "emisión" -->
         <div id="pregunta3b" class="hidden">
-            <label for="sedeDemora">¿En qué sede tuvo el inconveniente?</label>
-            <select id="sedeDemora" name="sedeDemora">
+            <label for="sedeDemora" class="block text-sm font-medium">¿En qué sede tuvo el inconveniente?</label>
+            <select id="sedeDemora" name="sedeDemora" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option value="">Seleccionar</option>
                 <option value="juanPablo">Sede Juan Pablo II</option>
                 <option value="macBellavista">Sede MAC de Bellavista</option>
@@ -82,8 +94,8 @@
         </div>
 
         <!-- Pregunta 4 -->
-        <label for="amabilidad">4. ¿El personal encargado fue amable y eficiente?</label>
-        <select id="amabilidad" name="amabilidad">
+        <label for="amabilidad" class="block text-sm font-medium">4. ¿El personal encargado fue amable y eficiente?</label>
+        <select id="amabilidad" name="amabilidad" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Seleccionar</option>
             <option value="si">Sí</option>
             <option value="no">No</option>
@@ -91,8 +103,8 @@
 
         <!-- Pregunta adicional para "personal no amable" -->
         <div id="pregunta4a" class="hidden">
-            <label for="procesoAtencion">¿En qué proceso tuvo el inconveniente de atención?</label>
-            <select id="procesoAtencion" name="procesoAtencion">
+            <label for="procesoAtencion" class="block text-sm font-medium">¿En qué proceso tuvo el inconveniente de atención?</label>
+            <select id="procesoAtencion" name="procesoAtencion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option value="">Seleccionar</option>
                 <option value="normas">Durante el Examen de Normas</option>
                 <option value="manejo">Durante el Examen de Manejo</option>
@@ -102,8 +114,8 @@
 
         <!-- Pregunta adicional para "emisión" en la pregunta de amabilidad -->
         <div id="pregunta4b" class="hidden">
-            <label for="sedeAtencion">¿En qué sede tuvo el inconveniente?</label>
-            <select id="sedeAtencion" name="sedeAtencion">
+            <label for="sedeAtencion" class="block text-sm font-medium">¿En qué sede tuvo el inconveniente?</label>
+            <select id="sedeAtencion" name="sedeAtencion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option value="">Seleccionar</option>
                 <option value="juanPablo">Sede Juan Pablo II</option>
                 <option value="macBellavista">Sede MAC de Bellavista</option>
@@ -111,11 +123,12 @@
         </div>
 
         <!-- Pregunta 5: Mejora continua -->
-        <label for="mejora">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio?</label>
+        <label for="mejora" class="block text-sm font-medium">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio?</label>
         <textarea id="mejora" name="mejora" rows="4" cols="50"></textarea>
 
-        <!-- Botón de envío -->
-        <button type="submit">Enviar</button>
+ <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Enviar
+            </button>
     </form>
 
     <script>
