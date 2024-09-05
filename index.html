@@ -20,12 +20,12 @@
 </head>
 <body>
     <h1>Cuestionario de Satisfacción</h1>
-    <form id="cuestionario" action="https://script.google.com/macros/s/AKfycbxq5OF7MgODsAKuUykyNJLd3anv4acUdOgVnkk04QFcjjIUt0MpYquO_zuHuARkjWysdw/exec" method="POST">
+    <form id="cuestionario" action="..." method="POST">
 
 <!-- Campo DNI -->
 <label for="dni">Ingrese su DNI (8 dígitos):</label>
 <input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" required>
-<small>Debe ingresar exactamente 8 números.</small>
+<small>Ingrese un DNI valido.</small>
 
 
 
@@ -35,9 +35,9 @@
         <select id="satisfaccion1" name="satisfaccion1">
             <option value="">Seleccionar</option>
             <option value="1">1 - Muy Insatisfecho</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="2">2 - Insatisfecho</option>
+            <option value="3">3 - Neutro</option>
+            <option value="4">4 - Satisfecho</option>
             <option value="5">5 - Muy Satisfecho</option>
         </select>
 
@@ -46,9 +46,9 @@
         <select id="claridad" name="claridad">
             <option value="">Seleccionar</option>
             <option value="1">1 - Deficiente</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="2">2 - Malo</option>
+            <option value="3">3 - Neutro</option>
+            <option value="4">4 - Bueno</option>
             <option value="5">5 - Excelente</option>
         </select>
 
