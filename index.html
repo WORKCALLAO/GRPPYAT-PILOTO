@@ -38,7 +38,8 @@
 <!-- Pregunta 1 -->
 <div>
     <label class="block text-sm font-medium">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
-    <div class="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3">
+    <!-- Ajuste responsivo con grid: en pantallas grandes será una fila, en pantallas pequeñas dos filas -->
+    <div class="mt-2 grid grid-cols-5 gap-2 sm:grid-cols-3 sm:gap-y-1">
         <div class="flex items-center justify-center">
             <input type="radio" id="star1" name="satisfaccion1" value="1">
             <label for="star1" class="ml-2">⭐</label>
@@ -65,27 +66,30 @@
 
 
 
-        <!-- Pregunta 2 -->
+
+
+    
  	<!-- Pregunta 2 -->
 <div>
     <label class="block text-sm font-medium">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
     <div class="mt-2 flex items-center space-x-2">
         <input type="radio" id="claridad1" name="claridad" value="1">
-        <label for="claridad1">⭐</label>
+        <label for="claridad1" style="font-size: 1rem;">⭐</label>
 
         <input type="radio" id="claridad2" name="claridad" value="2">
-        <label for="claridad2">⭐⭐</label>
+        <label for="claridad2" style="font-size: 1rem;">⭐⭐</label>
 
         <input type="radio" id="claridad3" name="claridad" value="3">
-        <label for="claridad3">⭐⭐⭐</label>
+        <label for="claridad3" style="font-size: 1rem;">⭐⭐⭐</label>
 
         <input type="radio" id="claridad4" name="claridad" value="4">
-        <label for="claridad4">⭐⭐⭐⭐</label>
+        <label for="claridad4" style="font-size: 1rem;">⭐⭐⭐⭐</label>
 
         <input type="radio" id="claridad5" name="claridad" value="5">
-        <label for="claridad5">⭐⭐⭐⭐⭐</label>
+        <label for="claridad5" style="font-size: 1rem;">⭐⭐⭐⭐⭐</label>
     </div>
 </div>
+
 
 
         <!-- Pregunta 3 -->
@@ -225,5 +229,3 @@ const dniInput = document.getElementById('dni');
 </body>
 </html>
 
-</body>
-</html>
