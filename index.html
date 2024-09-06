@@ -173,61 +173,79 @@
 </form>
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tiempoSi = document.getElementById('tiempo_si');
+        const tiempoNo = document.getElementById('tiempo_no');
+        const amabilidadSi = document.getElementById('amabilidad_si');
+        const amabilidadNo = document.getElementById('amabilidad_no');
+        const pregunta3a = document.getElementById('pregunta3a');
+        const pregunta3b = document.getElementById('pregunta3b');
+        const pregunta4a = document.getElementById('pregunta4a');
+        const pregunta4b = document.getElementById('pregunta4b');
+        const formulario = document.getElementById('cuestionario');
+        const procesoDemora = document.getElementById('procesoDemora');
+        const sedeDemora = document.getElementById('sedeDemora');
+        const procesoAtencion = document.getElementById('procesoAtencion');
+        const sedeAtencion = document.getElementById('sedeAtencion');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tiempoSi = document.getElementById('tiempo_si');
-            const tiempoNo = document.getElementById('tiempo_no');
-            const amabilidadSi = document.getElementById('amabilidad_si');
-            const amabilidadNo = document.getElementById('amabilidad_no');
-            const pregunta3a = document.getElementById('pregunta3a');
-            const pregunta3b = document.getElementById('pregunta3b');
-            const pregunta4a = document.getElementById('pregunta4a');
-            const pregunta4b = document.getElementById('pregunta4b');
-            const formulario = document.getElementById('cuestionario')
-            
-            tiempoSi.addEventListener('change', () => {
-                pregunta3a.classList.add('hidden');
-                pregunta3b.classList.add('hidden');
-            });
-
-            tiempoNo.addEventListener('change', () => {
-                pregunta3a.classList.remove('hidden');
-                const procesoDemora = document.getElementById('procesoDemora');
-                procesoDemora.addEventListener('change', () => {
-                    if (procesoDemora.value === 'emision') {
-                        pregunta3b.classList.remove('hidden');
-                    } else {
-                        pregunta3b.classList.add('hidden');
-                    }
-                });
-            });
-
-            amabilidadSi.addEventListener('change', () => {
-                pregunta4a.classList.add('hidden');
-                pregunta4b.classList.add('hidden');
-            });
-
-            amabilidadNo.addEventListener('change', () => {
-                pregunta4a.classList.remove('hidden');
-                const procesoAtencion = document.getElementById('procesoAtencion');
-                procesoAtencion.addEventListener('change', ()=>{
-                    if (procesoAtencion.value === 'emision2'){
-                        pregunta4b.classList.remove('hidden');
-                    } else{
-                        pregunta4b.classList.add('hidden');
-                    }
-                })
-            });
-
-            formulario.addEventListener('submit', function(event){
-                event.preventDefault();
-
-                alert('Gracias por su tiempo.')
-            })
-
-
+        // Manejo de los eventos para limpiar y validar campos
+        tiempoSi.addEventListener('change', () => {
+            pregunta3a.classList.add('hidden');
+            pregunta3b.classList.add('hidden');
+            procesoDemora.value = "";  // Limpiar valor seleccionado
+            sedeDemora.value = "";  // Limpiar valor seleccionado
+            procesoDemora.removeAttribute('required');
+            sedeDemora.removeAttribute('required');
         });
-    </script>
+
+        tiempoNo.addEventListener('change', () => {
+            pregunta3a.classList.remove('hidden');
+            procesoDemora.setAttribute('required', true);
+
+            procesoDemora.addEventListener('change', () => {
+                if (procesoDemora.value === 'emision') {
+                    pregunta3b.classList.remove('hidden');
+                    sedeDemora.setAttribute('required', true);
+                } else {
+                    pregunta3b.classList.add('hidden');
+                    sedeDemora.value = "";  // Limpiar valor seleccionado
+                    sedeDemora.removeAttribute('required');
+                }
+            });
+        });
+
+        amabilidadSi.addEventListener('change', () => {
+            pregunta4a.classList.add('hidden');
+            pregunta4b.classList.add('hidden');
+            procesoAtencion.value = "";  // Limpiar valor seleccionado
+            sedeAtencion.value = "";  // Limpiar valor seleccionado
+            procesoAtencion.removeAttribute('required');
+            sedeAtencion.removeAttribute('required');
+        });
+
+        amabilidadNo.addEventListener('change', () => {
+            pregunta4a.classList.remove('hidden');
+            procesoAtencion.setAttribute('required', true);
+
+            procesoAtencion.addEventListener('change', () => {
+                if (procesoAtencion.value === 'emision2') {
+                    pregunta4b.classList.remove('hidden');
+                    sedeAtencion.setAttribute('required', true);
+                } else {
+                    pregunta4b.classList.add('hidden');
+                    sedeAtencion.value = "";  // Limpiar valor seleccionado
+                    sedeAtencion.removeAttribute('required');
+                }
+            });
+        });
+
+        formulario.addEventListener('submit', function(event){
+            event.preventDefault();
+            alert('Gracias por su tiempo.');
+        });
+    });
+</script>
+
 </body>
 </html>
