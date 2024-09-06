@@ -69,23 +69,23 @@
     <div class="mt-2 grid grid-cols-5 gap-1" style="grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));">
         
         <div class="flex-start items-center justify-center">
-            <input type="radio" id="claridad1" name="claridad" value="1">
+            <input type="radio" id="claridad1" name="claridad" value="1" required>
             <label for="claridad1" class="mt-0" style="font-size: 0.7rem;">⭐</label>
         </div>
         <div class="flex-start items-center justify-center">
-            <input class="mx-2" type="radio" id="claridad2" name="claridad" value="2">
+            <input class="mx-2" type="radio" id="claridad2" name="claridad" value="2" required>
             <label for="claridad2" class="mt-0" style="font-size: 0.7rem;">⭐⭐</label>
         </div>
         <div class="flex-start items-center justify-center">
-            <input class="mx-4" type="radio" id="claridad3" name="claridad" value="3">
+            <input class="mx-4" type="radio" id="claridad3" name="claridad" value="3" required>
             <label for="claridad3" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐</label>
         </div>
         <div class="flex-start items-center justify-center">
-            <input class="mx-6" type="radio" id="claridad4" name="claridad" value="4">
+            <input class="mx-6" type="radio" id="claridad4" name="claridad" value="4" required>
             <label for="claridad4" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐⭐</label>
         </div>
         <div class="flex-start items-center justify-center">
-            <input class="mx-8" type="radio" id="claridad5" name="claridad" value="5">
+            <input class="mx-8" type="radio" id="claridad5" name="claridad" value="5" required>
             <label for="claridad5" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐⭐⭐</label>
         </div>
     </div>
@@ -97,11 +97,11 @@
     <label class="block text-sm font-medium">3. ¿Consideras que el tiempo de espera fue adecuado?</label>
     <div class="mt-2 flex items-center space-x-4">
         <div class="flex items-center">
-            <input type="radio" id="tiempo_si" name="tiempo" value="si" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+            <input type="radio" id="tiempo_si" name="tiempo" value="si" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
             <label for="tiempo_si" class="ml-2 text-sm">Sí</label>
         </div>
         <div class="flex items-center">
-            <input type="radio" id="tiempo_no" name="tiempo" value="no" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+            <input type="radio" id="tiempo_no" name="tiempo" value="no" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
             <label for="tiempo_no" class="ml-2 text-sm">No</label>
         </div>
     </div>
@@ -133,11 +133,11 @@
     <label class="block text-sm font-medium">4. ¿El personal encargado fue amable y eficiente?</label>
     <div class="mt-2 flex items-center space-x-4">
         <div class="flex items-center">
-            <input type="radio" id="amabilidad_si" name="amabilidad" value="si" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+            <input type="radio" id="amabilidad_si" name="amabilidad" value="si" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
             <label for="amabilidad_si" class="ml-2 text-sm">Sí</label>
         </div>
         <div class="flex items-center">
-            <input type="radio" id="amabilidad_no" name="amabilidad" value="no" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+            <input type="radio" id="amabilidad_no" name="amabilidad" value="no" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
             <label for="amabilidad_no" class="ml-2 text-sm">No</label>
         </div>
     </div>
@@ -164,7 +164,7 @@
 </div>
 
  <!-- Pregunta 5: Mejora continua -->
- <label for="mejora" class="block text-sm font-medium">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio?</label>
+ <label for="mejora" class="block text-sm font-medium">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio? (Puede incluir ideas innovadoras)</label>
  <textarea id="mejora" name="mejora" rows="4" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" ></textarea>
 
 <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
