@@ -34,33 +34,59 @@
             </div>
 
 
-
-
          <!-- Pregunta 1 -->
-            <div>
-                <label for="satisfaccion1" class="block text-sm font-medium">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
-                <select id="satisfaccion1" name="satisfaccion1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="">Seleccionar</option>
-                    <option value="1">1 - Muy Insatisfecho</option>
-                    <option value="2">2 - Insatisfecho</option>
-                    <option value="3">3 - Neutro</option>
-                    <option value="4">4 - Satisfecho</option>
-                    <option value="5">5 - Muy Satisfecho</option>
-                </select>
-            </div>
+<!-- Pregunta 1 -->
+<div>
+    <label class="block text-sm font-medium">1. ¿Qué tan satisfecho estás con el proceso de obtención de tu licencia de manejo?</label>
+    <div class="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3">
+        <div class="flex items-center justify-center">
+            <input type="radio" id="star1" name="satisfaccion1" value="1">
+            <label for="star1" class="ml-2">⭐</label>
+        </div>
+        <div class="flex items-center justify-center">
+            <input type="radio" id="star2" name="satisfaccion1" value="2">
+            <label for="star2" class="ml-2">⭐⭐</label>
+        </div>
+        <div class="flex items-center justify-center">
+            <input type="radio" id="star3" name="satisfaccion1" value="3">
+            <label for="star3" class="ml-2">⭐⭐⭐</label>
+        </div>
+        <div class="flex items-center justify-center">
+            <input type="radio" id="star4" name="satisfaccion1" value="4">
+            <label for="star4" class="ml-2">⭐⭐⭐⭐</label>
+        </div>
+        <div class="flex items-center justify-center">
+            <input type="radio" id="star5" name="satisfaccion1" value="5">
+            <label for="star5" class="ml-2">⭐⭐⭐⭐⭐</label>
+        </div>
+    </div>
+</div>
+
+
+
 
         <!-- Pregunta 2 -->
- 	 <div>
-        <label for="claridad" class="block text-sm font-medium">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
-        <select id="claridad" name="claridad" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-            <option value="">Seleccionar</option>
-            <option value="1">1 - Deficiente</option>
-            <option value="2">2 - Malo</option>
-            <option value="3">3 - Neutro</option>
-            <option value="4">4 - Bueno</option>
-            <option value="5">5 - Excelente</option>
-        </select>
-	 </div>
+ 	<!-- Pregunta 2 -->
+<div>
+    <label class="block text-sm font-medium">2. ¿Cómo calificarías la claridad de la información proporcionada durante el proceso?</label>
+    <div class="mt-2 flex items-center space-x-2">
+        <input type="radio" id="claridad1" name="claridad" value="1">
+        <label for="claridad1">⭐</label>
+
+        <input type="radio" id="claridad2" name="claridad" value="2">
+        <label for="claridad2">⭐⭐</label>
+
+        <input type="radio" id="claridad3" name="claridad" value="3">
+        <label for="claridad3">⭐⭐⭐</label>
+
+        <input type="radio" id="claridad4" name="claridad" value="4">
+        <label for="claridad4">⭐⭐⭐⭐</label>
+
+        <input type="radio" id="claridad5" name="claridad" value="5">
+        <label for="claridad5">⭐⭐⭐⭐⭐</label>
+    </div>
+</div>
+
 
         <!-- Pregunta 3 -->
 	<div>
@@ -124,7 +150,7 @@
 
         <!-- Pregunta 5: Mejora continua -->
         <label for="mejora" class="block text-sm font-medium">5. Finalmente, ¿Hay algo que te gustaría sugerir para mejorar el servicio?</label>
-        <textarea id="mejora" name="mejora" rows="4" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"></textarea>
+        <textarea id="mejora" name="mejora" rows="4" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" ></textarea>
 
  <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Enviar
@@ -196,5 +222,8 @@ const dniInput = document.getElementById('dni');
             alert('Gracias por completar el cuestionario');
         });
     </script>
+</body>
+</html>
+
 </body>
 </html>
