@@ -30,7 +30,7 @@
     <label for="dni" class="block text-sm font-medium">Ingrese su DNI (8 dígitos):</label>
     <input type="text" id="dni" name="dni" maxlength="8" pattern="\d{8}" required 
         class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-    <small class="text-red-500">Ingrese un DNI válido.</small>
+    <small id="dniError" class="text-red-500"></small>
 </div>
 
 
@@ -244,6 +244,63 @@
             event.preventDefault();
             alert('Gracias por su tiempo.');
         });
+
+        //validacion del DNI
+        const dniInput = document.getElementById('dni');
+        const dniError = document.getElementById('dniError');
+    
+    
+    // Restringir a solo números en la entrada
+    dniInput.addEventListener('keypress', function (e) {
+        if (e.key < '0' || e.key > '9') {
+            e.preventDefault();
+        }
+    });
+
+    // Personalizar el mensaje de error
+    dniInput.addEventListener('invalid', function (e) {
+        if (!dniInput.validity.valid) {
+            // Establecer un mensaje personalizado si no es válido
+            dniInput.setCustomValidity('Por favor, ingrese su DNI correctamente.');
+        }
+    });
+
+    // Restablecer el mensaje de error cuando el campo sea válido
+    dniInput.addEventListener('input', function () {
+        // Si el valor es correcto, restablecer el mensaje de error
+        if (dniInput.validity.valid) {
+            dniInput.setCustomValidity('');
+        }
+    });
+
+    // Restablecer el mensaje de error cuando el campo sea válido
+    dniInput.addEventListener('input', function () {
+        // Si el valor es correcto, restablecer el mensaje de error
+        if (dniInput.validity.valid) {
+            dniInput.setCustomValidity('');  // Limpiar mensaje de error
+        } else if (dniInput.value.length !== 8) {
+            // Mostrar mensaje personalizado solo si no son 8 dígitos
+            dniInput.setCustomValidity('El DNI debe tener exactamente 8 dígitos.');
+        }
+    });
+
+    // Limpiar el mensaje de error si el usuario corrige el campo después de un fallo
+    dniInput.addEventListener('change', function () {
+        if (dniInput.value.length === 8) {
+            dniInput.setCustomValidity('');  // Limpiar cualquier mensaje de error
+            dniError.classList.add('hidden'); // Ocultar mensaje de error visual
+        }
+    });
+
+    dniInput.addEventListener('blur', function () {
+        if (dniInput.validity.valid) {
+            dniError.classList.add('hidden');
+        } else {
+            dniError.classList.remove('hidden');
+        }
+    });
+      
+
     });
 </script>
 
