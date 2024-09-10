@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
 
-    <title>Cuestionario de Satisfacción</title>
+    <title>Encuesta de Satisfacción</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
 <body class="bg-gray-100 p-4">
    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
 
-        <h1 class="text-2xl font-bold mb-4 text-center">Cuestionario de Satisfacción</h1>
+        <h1 class="text-2xl font-bold mb-4 text-center">Encuesta de Satisfacción</h1>
 
         <h2 class="text-lg text-gray-700 mb-4">
             Procedimiento para la obtención de licencias de conducir. <br>
@@ -48,11 +48,11 @@
     <div class="mt-2 grid grid-cols-5 gap-1" style="grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));">
         <div class="flex-start items-center justify-center">
             <input type="radio" id="star1" name="satisfaccion1" value="1" required>
-            <label for="star1" class="mt-0" style="font-size: 0.7rem;">⭐</label>
+            <label for="star1" class="mt-0" style="font-size: 0.7rem;">Nada satisfecho</label>
         </div>
         <div class="flex-start items-center justify-center">
             <input class="mx-2" type="radio" id="star2" name="satisfaccion1" value="2" required>
-            <label for="star2" class="mt-0" style="font-size: 0.7rem;">⭐⭐</label>
+            <label for="star2" class="mt-0" style="font-size: 0.7rem;">Poco satisfecho</label>
         </div>
         <div class="flex-start items-center justify-center">
             <input class="mx-4" type="radio" id="star3" name="satisfaccion1" value="3" required>
@@ -60,11 +60,11 @@
         </div>
         <div class="flex-start items-center justify-center">
             <input class="mx-6" type="radio" id="star4" name="satisfaccion1" value="4" required>
-            <label for="star4" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐⭐</label>
+            <label for="star4" class="mt-0" style="font-size: 0.7rem;">Satisfecho</label>
         </div>
         <div class="flex-start items-center justify-center">
             <input  class="mx-8" type="radio" id="star5" name="satisfaccion1" value="5" required>
-            <label for="star5" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐⭐⭐</label>
+            <label for="star5" class="mt-0" style="font-size: 0.7rem;">Muy satisfecho</label>
         </div>
     </div>
 </div>
@@ -78,7 +78,7 @@
         
         <div class="flex-start items-center justify-center">
             <input type="radio" id="claridad1" name="claridad" value="1" required>
-            <label for="claridad1" class="mt-0" style="font-size: 0.7rem;">⭐</label>
+            <label for="claridad1" class="mt-0" style="font-size: 0.7rem;">Deficiente</label>
         </div>
         <div class="flex-start items-center justify-center">
             <input class="mx-2" type="radio" id="claridad2" name="claridad" value="2" required>
@@ -94,7 +94,7 @@
         </div>
         <div class="flex-start items-center justify-center">
             <input class="mx-8" type="radio" id="claridad5" name="claridad" value="5" required>
-            <label for="claridad5" class="mt-0" style="font-size: 0.7rem;">⭐⭐⭐⭐⭐</label>
+            <label for="claridad5" class="mt-0" style="font-size: 0.7rem;">Excelente</label>
         </div>
     </div>
 </div>
@@ -117,7 +117,7 @@
 
 <!-- Pregunta adicional para "tiempo no adecuado" -->
 <div id="pregunta3a" class="hidden">
-    <label for="procesoDemora" class="block text-sm font-medium">¿En qué proceso tuvo el inconveniente por demora?</label>
+    <label for="procesoDemora" class="block text-sm font-medium">¿En qué momento tuvo el inconveniente?</label>
     <select id="procesoDemora" name="procesoDemora" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <option value="">Seleccionar</option>
         <option value="normas">Durante el Examen de Normas</option>
@@ -128,7 +128,7 @@
 
 <!-- Pregunta adicional para "emisión no adecuado" -->
 <div id="pregunta3b" class="hidden">
-    <label for="sedeDemora" class="block text-sm font-medium">¿En qué sede tuvo el inconveniente?</label>
+    <label for="sedeDemora" class="block text-sm font-medium">¿En qué sede?</label>
     <select id="sedeDemora" name="sedeDemora" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <option value="">Seleccionar</option>
         <option value="juanPablo">Sede Juan Pablo II</option>
@@ -138,7 +138,7 @@
 
 <!-- Pregunta 4 -->
 <div>
-    <label class="block text-sm font-medium">4. ¿El personal encargado fue amable y eficiente?</label>
+    <label class="block text-sm font-medium">4. ¿El personal encargado fue atento?</label>
     <div class="mt-2 flex items-center space-x-4">
         <div class="flex items-center">
             <input type="radio" id="amabilidad_si" name="amabilidad" value="si" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" required>
@@ -153,7 +153,7 @@
 
 <!-- Pregunta adicional para "personal no amable" -->
 <div id="pregunta4a" class="hidden">
-    <label for="procesoAtencion" class="block text-sm font-medium">¿En qué proceso tuvo el inconveniente de atención?</label>
+    <label for="procesoAtencion" class="block text-sm font-medium">¿En qué momento tuvo el inconveniente?</label>
     <select id="procesoAtencion" name="procesoAtencion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <option value="">Seleccionar</option>
         <option value="norma2">Durante el Examen de Normas</option>
@@ -163,7 +163,7 @@
 </div>
 <!-- Pregunta adicional para "emisión por no amable" -->
 <div id="pregunta4b" class="hidden">
-    <label for="sedeAtencion" class="block text-sm font-medium">¿En qué sede tuvo el inconveniente?</label>
+    <label for="sedeAtencion" class="block text-sm font-medium">¿En qué sede?</label>
     <select id="sedeAtencion" name="sedeAtencion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <option value="">Seleccionar</option>
         <option value="juanPablo">Sede Juan Pablo II</option>
@@ -314,3 +314,4 @@
 
 </body>
 </html>
+
